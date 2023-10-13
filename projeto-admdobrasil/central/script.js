@@ -5,6 +5,7 @@ const startButton = document.getElementById("start-button");
       const nextButton = document.getElementById("next-button");
       const overlay = document.getElementById("overlay");
       const newPhase = document.getElementById("new-phase");
+      const gameLogo = document.getElementById('game-logo')
       const body = document.body;
 
       function iniciarJogo() {
@@ -30,7 +31,9 @@ const startButton = document.getElementById("start-button");
         overlay.style.display = "none";
         newPhase.style.display = "none";
         gameMessage.innerHTML = "Nova fase começou! Boa sorte!";
+    
 
         // Alterar a imagem de fundo para a nova fase
         body.style.backgroundImage = "url('../imagens/caminheiro_com_nota_2.png')";
+        gameLogo.style.display = "none"
       }

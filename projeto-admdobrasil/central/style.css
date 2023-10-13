@@ -21,18 +21,22 @@ body {
   #start-button,
   #quit-button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 25px;
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
     margin: 10px;
     border-radius: 10px;
+    font-family: "Press Start 2P", cursive;
+    text-transform: uppercase;
+    transform: scale(1); /* Escala para dar uma aparência pixelizada */
+    letter-spacing: 1px;
   }
 
   #start-button:hover,
   #quit-button:hover {
-    background-color: #0056b3;
+    background-color: #000000;
   }
 
   #game-title {
@@ -45,16 +49,21 @@ body {
 
   #next-button {
     padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4caf50;
+    font-size: 25px;
+    background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
     margin: 10px;
+    border-radius: 10px;
+    font-family: "Press Start 2P", cursive;
+    text-transform: uppercase;
+    transform: scale(1); /* Escala para dar uma aparência pixelizada */
+    letter-spacing: 1px;
   }
 
   #next-button:hover {
-    background-color: #45a049;
+    background-color: #000000;
   }
 
   #overlay {
@@ -64,7 +73,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(182, 182, 182, 0.7);
     z-index: 2;
     transition: opacity 0.5s;
   }
@@ -79,3 +88,4 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+

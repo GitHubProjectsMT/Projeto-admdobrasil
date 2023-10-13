@@ -1,0 +1,81 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-image: url("../imagens/Background.png"); /* Imagem de fundo inicial */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow-y: hidden;
+    transition: background-image 1s ease; /* Adiciona uma transição suave para a imagem de fundo */
+  }
+
+  #game-container {
+    display: none;
+  }
+
+  #start-button,
+  #quit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+  }
+
+  #start-button:hover,
+  #quit-button:hover {
+    background-color: #0056b3;
+  }
+
+  #game-title {
+    font-size: 30px;
+    font-family: "Press Start 2P", cursive;
+    text-transform: uppercase;
+    transform: scale(1); /* Escala para dar uma aparência pixelizada */
+    letter-spacing: 2px;
+  }
+
+  #next-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  #next-button:hover {
+    background-color: #45a049;
+  }
+
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    transition: opacity 0.5s;
+  }
+
+  #new-phase {
+    display: none;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

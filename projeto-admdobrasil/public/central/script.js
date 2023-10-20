@@ -6,6 +6,9 @@ const nextButton = document.getElementById("next-button");
 const overlay = document.getElementById("overlay");
 const newPhase = document.getElementById("new-phase");
 const gameLogo = document.getElementById("game-logo");
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("myBtn-modal");
+const span = document.getElementsByClassName("close")[0];
 const body = document.body;
 
 function iniciarJogo() {
@@ -36,26 +39,15 @@ function iniciarNovaFase() {
   body.style.backgroundImage = "url('../imagens/caminheiro_com_nota_2.png')";
   gameLogo.style.display = "none";
 }
-// Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn-modal");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
 btn.onclick = function () {
   modal.style.display = "block";
 };
 
-// When the user clicks on <span> (x), close the modal
 span.onclick = function () {
   modal.style.display = "none";
 };
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";

@@ -1,129 +1,130 @@
 body {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    background-image: url("../imagens/Background.png"); /* Imagem de fundo inicial */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    flex-direction: column;
-    overflow-y: hidden;
-    transition: background-image 1s ease; /* Adiciona uma transição suave para a imagem de fundo */
-  }
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-image: url("../imagens/Background.png"); /* Imagem de fundo inicial */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  overflow-y: hidden;
+  transition: background-image 1s ease; /* Adiciona uma transição suave para a imagem de fundo */
+}
 
-  #game-container {
-    display: none;
-  }
+#game-container {
+  display: none;
+}
 
-  #start-button,
-  #quit-button,
-  #myBtn-modal {
-    padding: 10px 20px;
-    font-size: 25px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-    border-radius: 10px;
-    font-family: "Press Start 2P", cursive;
-    text-transform: uppercase;
-    transform: scale(1); /* Escala para dar uma aparência pixelizada */
-    letter-spacing: 1px;
-  }
+#start-button,
+#quit-button,
+#myBtn-modal {
+  padding: 10px 20px;
+  font-size: 25px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 10px;
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
+  transform: scale(1); /* Escala para dar uma aparência pixelizada */
+  letter-spacing: 1px;
+}
 
-  #start-button:hover,
-  #quit-button:hover,
-  #myBtn-modal:hover {
-    background-color: #000000;
-  }
+#start-button:hover,
+#quit-button:hover,
+#myBtn-modal:hover {
+  background-color: #000000;
+}
 
-  #game-title {
-    font-size: 30px;
-    font-family: "Press Start 2P", cursive;
-    text-transform: uppercase;
-    transform: scale(1); /* Escala para dar uma aparência pixelizada */
-    letter-spacing: 2px;
-  }
+#game-title {
+  font-size: 30px;
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
+  transform: scale(1); /* Escala para dar uma aparência pixelizada */
+  letter-spacing: 2px;
+}
 
-  #next-button {
-    padding: 10px 20px;
-    font-size: 25px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-    border-radius: 10px;
-    font-family: "Press Start 2P", cursive;
-    text-transform: uppercase;
-    transform: scale(1); /* Escala para dar uma aparência pixelizada */
-    letter-spacing: 1px;
-  }
+#next-button {
+  padding: 10px 20px;
+  font-size: 25px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 10px;
+  font-family: "Press Start 2P", cursive;
+  text-transform: uppercase;
+  transform: scale(1); /* Escala para dar uma aparência pixelizada */
+  letter-spacing: 1px;
+}
 
-  #next-button:hover {
-    background-color: #000000;
-  }
+#next-button:hover {
+  background-color: #000000;
+}
 
-  #overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(182, 182, 182, 0.7);
-    z-index: 2;
-    transition: opacity 0.5s;
-  }
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(182, 182, 182, 0.7);
+  z-index: 2;
+  transition: opacity 0.5s;
+}
 
-  #new-phase {
-    display: none;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+#new-phase {
+  display: none;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
   
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
- 
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

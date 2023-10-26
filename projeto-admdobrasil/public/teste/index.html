@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Simples</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('imagem1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #start-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #dialog-box {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #close-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="start-button" onclick="startGame()">Começar</button>
+    <div id="dialog-box">
+        <p>Parabéns, você ganhou o jogo!</p>
+        <button id="close-button" onclick="closeDialog()">Fechar</button>
+    </div>
+
+    <script>
+        function startGame() {
+            // Muda o fundo de imagem
+            document.body.style.backgroundImage = "url('imagem2.jpg')";
+            
+            // Exibe a caixa de diálogo
+            document.getElementById("dialog-box").style.display = "block";
+        }
+
+        function closeDialog() {
+            // Fecha a caixa de diálogo
+            document.getElementById("dialog-box").style.display = "none";
+        }
+    </script>
+</body>
+</html>

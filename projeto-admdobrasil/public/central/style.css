@@ -132,7 +132,7 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-footer {
+#footer-text {
   position: fixed;
   bottom: 0;
   width: 100%;

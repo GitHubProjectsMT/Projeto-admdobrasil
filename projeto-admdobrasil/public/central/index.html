@@ -3,6 +3,7 @@
   <head>
     <title>TROCA DE NOTAS</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="../imagens//Icon ADM.png" type="image/x-icon">
   </head>
   <body>
     <img
@@ -24,14 +25,11 @@
 
     <div id="overlay">
       <div id="new-phase">
-        <h2>Prólogo</h2>
+        <h2>Fase 1: Conferimento do processo.</h2>
         <p>
-          Olá, tudo bem? hoje você vai aprender o processo fiscal do troca de
-          notas. <br />
-          Este jogo vai te ajudar a aprender todo o processo fiscal de maneira
-          intuitiva e legal.
+         Você está pronto?
         </p>
-        <button onclick="iniciarNovaFase()">Continuar</button>
+        <button id="btn-continuar" onclick="iniciarNovaFase()">Continuar</button>
       </div>
     </div>
     <div id="myModal" class="modal">
@@ -89,11 +87,13 @@
             interno, para que erros e falhas não sejam cometidas.</strong
           >
           <br />
-          <button id="start-button" onclick="iniciarJogo()">Continuar</button>
+          <button id="start-button" onclick="proximaFase()">Continuar</button>
         </p>
       </div>
     </div>
     <script src="script.js"></script>
   </body>
-  <footer id="footer-text">Carga Pro. &copy;</footer>
+  <div id="footer-text">
+  <footer>Carga Pro. &copy;</footer>
+</div>
 </html>

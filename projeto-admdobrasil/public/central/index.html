@@ -12,7 +12,7 @@
     />
     <h1 id="game-title">Troca de Notas</h1>
 
-    <button id="start-button" onclick="iniciarJogo()">Começar</button>
+    <button id="myBtn-modal" onclick="iniciarJogo()">Começar</button>
     <button id="quit-button" onclick="encerrarJogo()" style="display: none">
       Sair
     </button>
@@ -34,33 +34,66 @@
         <button onclick="iniciarNovaFase()">Continuar</button>
       </div>
     </div>
-    <button id="myBtn-modal">Sobre o jogo</button>
-
-    <!-- The Modal -->
     <div id="myModal" class="modal">
-      <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h1>Processos Fiscais na Rodovia de Grãos - ADM DO BRASIL</h1>
+        <h1>SOBRE O JOGO</h1>
         <h4>
           Neste jogo, você vai aprender sobre manifesto fiscal de milho e soja
           na modalidade FOB.
         </h4>
-        <li><a href="">Fase 1: Conferência do Processo</a> <img src="../imagens/icons8-cadeado-50 (1).png" alt="" style=""></li>
-        <li><a href="">Fase 2: Criação de Ticket</a><img src="../imagens/icons8-cadeado-50 (1).png" alt=""></li>
-        <li><a href="">Fase 3: Notas Fiscais</a><img src="../imagens/icons8-cadeado-50 (1).png" alt=""></li>
-        <li><a href="">Fase 2: Conferência de processos de retorno</a><img src="../imagens/icons8-cadeado-50 (1).png" alt=""></li>
-        <li><a href="">Fase 4: Agendamento</a><img src="../imagens/icons8-cadeado-50 (1).png" alt=""></li>
-
+        <li>
+          <a href="">Fase 1: Conferência do Processo</a>
+          <img
+            src="../imagens/icons8-cadeado-50 (1).png"
+            alt=""
+            style="width: 30px"
+          />
+        </li>
+        <li>
+          <a href="">Fase 2: Criação de Ticket/Faturamento</a
+          ><img
+            src="../imagens/icons8-cadeado-50 (1).png"
+            style="width: 30px"
+            alt=""
+          />
+        </li>
+        <li>
+          <a href="">Fase 3: Agendamento</a
+          ><img
+            src="../imagens/icons8-cadeado-50 (1).png"
+            alt=""
+            style="width: 30px"
+          />
+        </li>
+        <li>
+          <a href="">Fase 2: Conferência Final</a
+          ><img
+            src="../imagens/icons8-cadeado-50 (1).png"
+            alt=""
+            style="width: 30px"
+          />
+        </li>
+        <li>
+          <a href="">Fase 4: Postagem</a
+          ><img
+            src="../imagens/icons8-cadeado-50 (1).png"
+            alt=""
+            style="width: 30px"
+          />
+        </li>
 
         <p>
-          Em resumo, iremos te ensinar sobre as regras e impostos que
-          afetam a movimentação de grãos nas estradas. É importante saber disso
-          para fazer tudo legalmente e não ter problemas como multas e o processo fiscal.
+          <strong
+            >Em resumo, iremos te ensinar sobre o processo de faturamento
+            interno, para que erros e falhas não sejam cometidas.</strong
+          >
+          <br />
+          <button id="start-button" onclick="iniciarJogo()">Continuar</button>
         </p>
       </div>
     </div>
     <script src="script.js"></script>
   </body>
-  <footer>Carga Pro. &copy;</footer>
+  <footer id="footer-text">Carga Pro. &copy;</footer>
 </html>

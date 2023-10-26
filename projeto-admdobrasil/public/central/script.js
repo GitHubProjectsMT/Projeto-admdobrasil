@@ -9,35 +9,42 @@ const gameLogo = document.getElementById("game-logo");
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("myBtn-modal");
 const span = document.getElementsByClassName("close")[0];
+const tittleGame = document.getElementById("game-title")
+const footerText = document.getElementById("footer-text")
 const body = document.body;
 
 function iniciarJogo() {
   startButton.style.display = "none";
+  modal.style.display = "none";
+  btn.style.display = "none";
   quitButton.style.display = "block";
   gameContainer.style.display = "block";
-  gameMessage.innerHTML = "O jogo começou! Divirta-se!";
 }
 
 function encerrarJogo() {
   startButton.style.display = "block";
   quitButton.style.display = "none";
   gameContainer.style.display = "none";
-  gameMessage.innerHTML = "Jogo encerrado. Até a próxima!";
+
+  location.reload();
 }
 
 function proximaFase() {
   overlay.style.display = "block";
   newPhase.style.display = "block";
+  
 }
 
 function iniciarNovaFase() {
   overlay.style.display = "none";
   newPhase.style.display = "none";
-  gameMessage.innerHTML = "Nova fase começou! Boa sorte!";
+  tittleGame.style.display = "none"
 
   // Alterar a imagem de fundo para a nova fase
   body.style.backgroundImage = "url('../imagens/caminheiro_com_nota_2.png')";
   gameLogo.style.display = "none";
+
+  
 }
 
 btn.onclick = function () {

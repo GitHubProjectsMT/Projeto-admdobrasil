@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diálogo Interativo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #222;
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      #dialog-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        min-height: 100vh;
+      }
+
+      #dialog-box {
+        background-color: #333;
+        border: 2px solid #555;
+        border-radius: 10px;
+        width: 400px;
+        margin: 100px auto;
+        padding: 20px;
+      }
+
+      #dialog {
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+      }
+
+      #options {
+        margin-top: 20px;
+      }
+
+      button {
+        background-color: #444;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+
+      button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="dialog-container">
+      <div id="dialog-box">
+        <p id="dialog">
+          Suporte: Olá, "Gabriel", qual será seu proximo passo em relação a esta
+          troca?
+        </p>
+        <div id="options">
+          <button onclick="responder(1)">Validar com o suporte</button>
+          <button onclick="responder(2)">Conferir o processo</button>
+          <button onclick="responder(3)">Seguir sem conferir</button>
+          <a href="../central/index.html">Segundo link</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var dialogBox = document.getElementById("dialog-box");
+      var dialog = document.getElementById("dialog");
+      var options = document.getElementById("options");
+
+      function responder(opcao) {
+        switch (opcao) {
+          case 1:
+            dialog.innerHTML =
+              "Suporte: Ótima escolha, é importante que em caso de duvidas os faturista validem o processo com o suporte.";
+            options.innerHTML = "";
+            break;
+          case 2:
+            dialog.innerHTML =
+              "Suporte: Muito bem, é super importante a conferência do processo e caso haja algo validar com o suporte";
+            options.innerHTML = "";
+            break;
+          case 3:
+            dialog.innerHTML =
+              "Suporte: Pessima escolha, você não deve seguir o processo sem o conferimento ou se for em caso de duvidas não mandar para o suporte.";
+            options.innerHTML = "";
+            break;
+          default:
+            dialog.innerHTML = "Personagem: Desculpe, não entendi.";
+            options.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -3,7 +3,11 @@
   <head>
     <title>TROCA DE NOTAS</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="../imagens//Icon ADM.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="../imagens//Icon ADM.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <img
@@ -25,11 +29,21 @@
 
     <div id="overlay">
       <div id="new-phase">
-        <h2>Fase 1: Conferimento do processo.</h2>
+        <h2>Fase 1: Conferimento do processo</h2>
         <p>
-         Você está pronto?
+          Nesse processo iremos te ensinar a verificar pontos importantes do
+          conferimento do processo.
         </p>
-        <button id="btn-continuar" onclick="iniciarNovaFase()">Continuar</button>
+        <strong>
+          <li>Análise do envio de documentos.</li>
+          <li>Análise da placa</li>
+          <li>Análise do peso</li>
+          <li>Análise do processo em geral.</li>
+        </strong>
+
+        <button id="btn-continuar" onclick="iniciarNovaFase()">
+          Continuar
+        </button>
       </div>
     </div>
     <div id="myModal" class="modal">
@@ -91,9 +105,36 @@
         </p>
       </div>
     </div>
+    <div id="dialog-container" style="display: none">
+      <div id="dialog-box">
+        <p id="dialog">
+          Francisco: olá, tudo bem? hoje eu irei te explicar um pouco do nosso
+          processo.
+        </p>
+        <div id="options">
+          <button id="btn-responder" onclick="responder(1)">
+            Certo, podemos processeguir.
+          </button>
+          <button
+            style="display: none"
+            id="btn-responder"
+            onclick="responder(2)"
+          >
+            Conferir o processo
+          </button>
+          <button
+            style="display: none"
+            id="btn-responder"
+            onclick="responder(3)"
+          >
+            Seguir sem conferir
+          </button>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
   <div id="footer-text">
-  <footer>Carga Pro. &copy;</footer>
-</div>
+    <footer>Carga Pro. &copy;</footer>
+  </div>
 </html>

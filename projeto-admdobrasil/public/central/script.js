@@ -70,7 +70,7 @@ function responder(opcao) {
   switch (opcao) {
     case 1:
       dialog.innerHTML =
-        "Suporte: Certo, vamos prosseguir";
+        "Classificador: no processo interno algumas documentações são obrigatorias para o devido faturamento são elas: NF do produtor, Ordem de carregamento, ticket de pesagem e por ultimo o laudo de classificação.";
       options.innerHTML = "";
       break;
     case 2:

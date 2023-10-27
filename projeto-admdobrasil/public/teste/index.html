@@ -1,71 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo Simples</title>
+<html>
+  <head>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('imagem1.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        #start-button {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        #dialog-box {
-            display: none;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        #close-button {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
-        }
+      #dialog-container {
+        width: 400px;
+        margin: 0 auto;
+        text-align: left;
+        border: 1px solid #ccc;
+        padding: 20px;
+      }
+      #character {
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
-    <button id="start-button" onclick="startGame()">Começar</button>
-    <div id="dialog-box">
-        <p>Parabéns, você ganhou o jogo!</p>
-        <button id="close-button" onclick="closeDialog()">Fechar</button>
+  </head>
+  <body>
+    <div id="dialog-container">
+      <p id="dialog"></p>
+      <div id="options">
+        <button id="option1">Opção 1</button>
+        <button id="option2">Opção 2</button>
+        <button id="continue" style="display: none">Continuar</button>
+      </div>
     </div>
 
     <script>
-        function startGame() {
-            // Muda o fundo de imagem
-            document.body.style.backgroundImage = "url('imagem2.jpg')";
-            
-            // Exibe a caixa de diálogo
-            document.getElementById("dialog-box").style.display = "block";
-        }
+      const dialogElement = document.getElementById("dialog");
+      const option1Element = document.getElementById("option1");
+      const option2Element = document.getElementById("option2");
+      const continueButton = document.getElementById("continue");
 
-        function closeDialog() {
-            // Fecha a caixa de diálogo
-            document.getElementById("dialog-box").style.display = "none";
+      let currentStep = 1;
+
+      function showDialog(step) {
+        switch (step) {
+          case 1:
+            dialogElement.innerText =
+              "Personagem: Olá! Eu sou o Personagem. O que você gostaria de fazer?";
+            option1Element.innerText = "Escolha 1";
+            option2Element.innerText = "Escolha 2";
+            break;
+          case 2:
+            dialogElement.innerText =
+              "Personagem: Você escolheu a Opção 1. Legal! O que você quer fazer a seguir?";
+            option1Element.innerText = "Opção 1.1";
+            option2Element.innerText = "Opção 1.2";
+            break;
+          case 3:
+            dialogElement.innerText =
+              "Personagem: Você escolheu a Opção 2. Ótimo! O que você quer fazer agora?";
+            option1Element.innerText = "Opção 2.1";
+            option2Element.innerText = "Opção 2.2";
+            break;
+          case 4:
+            dialogElement.innerText =
+              "Personagem: Isso foi divertido! Você quer continuar o diálogo?";
+            option1Element.style.display = "none";
+            option2Element.style.display = "none";
+            continueButton.style.display = "inline";
+            break;
         }
+      }
+
+      option1Element.addEventListener("click", () => {
+        currentStep++;
+        showDialog(currentStep);
+      });
+
+      option2Element.addEventListener("click", () => {
+        currentStep++;
+        showDialog(currentStep);
+      });
+
+      continueButton.addEventListener("click", () => {
+        currentStep = 1;
+        showDialog(currentStep);
+        continueButton.style.display = "none";
+        option1Element.style.display = "inline";
+        option2Element.style.display = "inline";
+      });
+
+      showDialog(currentStep);
     </script>
-</body>
+  </body>
 </html>

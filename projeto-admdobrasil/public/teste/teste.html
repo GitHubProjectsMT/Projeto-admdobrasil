@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        font-family: "Press Start 2P";
+        font-size: 12px;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .dialog-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+      }
+
+      .dialog-box {
+        background-color: #333;
+        border: 2px solid #666;
+        border-radius: 10px;
+        width: 800px; /* Aumentando a largura da caixa */
+        text-align: left;
+        display: flex;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        margin: 10px;
+      }
+
+      .character-image {
+        width: 100px;
+        height: 100px;
+        background-image: url("character.png");
+        background-size: cover;
+        border: 2px solid #666;
+
+        margin-right: 20px; /* Espaçamento à esquerda da imagem */
+      }
+
+      .dialog-content {
+        flex: 1;
+      }
+
+      .character-name {
+        font-weight: bold;
+        font-size: 1.5em; /* Tamanho maior para o nome do jogador */
+        margin: 10px;
+      }
+
+      .message {
+        font-size: 1em; /* Tamanho maior para a fala */
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+
+      #next-button {
+        background-color: #00ff00;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      #next-button:hover {
+        background-color: #00cc00;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dialog-container hidden">
+      <div class="dialog-box">
+        <div class="character-image"></div>
+        <div class="dialog-content">
+          <div class="character-name"></div>
+          <div class="message"></div>
+          <div class="button-container">
+            <button id="next-button">Próximo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const dialogContainer = document.querySelector(".dialog-container");
+      const characterNameElement = document.querySelector(".character-name");
+      const messageElement = document.querySelector(".message");
+
+      const dialogues = [
+        {
+          character: "NPC:",
+          message:
+            "Olá, tudo bem? hoje vou te ensinar um pouco do nosso processo interno da ADM, abordando os tópicos da Fase 1.",
+        },
+        { character: "Faturista:", message: "Que legal, estou pronto." },
+        { character: "Trocas NPC:", message: "Certo, então vamos lá." },
+        {
+          character: "Trocas NPC:",
+          message:
+            "Primeiro passo importante para o processo de conferimento é o análise dos documentos anexados",
+        },
+        { character: "Faturista", message: "" },
+        { character: "Faturista", message: "" },
+        { character: "Faturista", message: "" },
+        { character: "Faturista", message: "" },
+        { character: "Faturista", message: "" },
+        { character: "Faturista", message: "" },
+        { character: "Faturista", message: "" },
+        { character: "Faturista", message: "" },
+        { character: "Faturista", message: "" },
+        { character: "Faturista", message: "" },
+
+        // Adicione mais diálogos aqui
+      ];
+
+      let currentDialogueIndex = 0;
+
+      function displayNextDialogue() {
+        if (currentDialogueIndex < dialogues.length) {
+          const currentDialogue = dialogues[currentDialogueIndex];
+          characterNameElement.textContent = currentDialogue.character;
+          messageElement.textContent = currentDialogue.message;
+          currentDialogueIndex++;
+        } else {
+          dialogContainer.classList.add("hidden");
+        }
+      }
+
+      dialogContainer.addEventListener("click", displayNextDialogue);
+
+      // Função para mostrar a caixa de diálogo
+      function showDialogue() {
+        currentDialogueIndex = 0;
+        dialogContainer.classList.remove("hidden");
+        displayNextDialogue();
+      }
+
+      // Mostrar a caixa de diálogo após um atraso (simulando um evento de jogo)
+      setTimeout(showDialogue, 1000);
+    </script>
+  </body>
+</html>

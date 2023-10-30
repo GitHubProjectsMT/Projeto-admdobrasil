@@ -11,7 +11,7 @@ const btn = document.getElementById("myBtn-modal");
 const span = document.getElementsByClassName("close")[0];
 const tittleGame = document.getElementById("game-title");
 const footerText = document.getElementById("footer-text");
-const caixaDialogo = document.getElementById("dialog-container")
+const caixaDialogo = document.getElementById("dialog-container");
 const body = document.body;
 
 function iniciarJogo() {
@@ -43,7 +43,7 @@ function iniciarNovaFase() {
   tittleGame.style.display = "none";
   btn.style.display = "none";
   gameLogo.style.display = "none";
-  caixaDialogo.style.display= "block"
+  caixaDialogo.style.display = "block";
 
   // Alterar a imagem de fundo para a nova fase
   body.style.backgroundImage = "url('../imagens/caminheiro_com_nota_2.png')";

@@ -10,7 +10,7 @@ const modal = document.getElementById("myModal");
 const btn = document.getElementById("myBtn-modal");
 const span = document.getElementsByClassName("close")[0];
 const tittleGame = document.getElementById("game-title");
-const footerText = document.getElementById("footer-text");
+
 const caixaDialogo = document.getElementById("dialog-container");
 const body = document.body;
 
@@ -43,7 +43,7 @@ function iniciarNovaFase() {
   tittleGame.style.display = "none";
   btn.style.display = "none";
   gameLogo.style.display = "none";
-  caixaDialogo.style.display = "block";
+  caixaDialogo.style.display = "block"
 
   // Alterar a imagem de fundo para a nova fase
   body.style.backgroundImage = "url('../imagens/caminheiro_com_nota_2.png')";
@@ -62,29 +62,58 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-var dialogBox = document.getElementById("dialog-box");
-var dialog = document.getElementById("dialog");
-var options = document.getElementById("options");
+const dialogContainer = document.querySelector(".dialog-container");
+const characterNameElement = document.querySelector(".character-name");
+const messageElement = document.querySelector(".message");
 
-function responder(opcao) {
-  switch (opcao) {
-    case 1:
-      dialog.innerHTML =
-        "Classificador: no processo interno algumas documentações são obrigatorias para o devido faturamento são elas: NF do produtor, Ordem de carregamento, ticket de pesagem e por ultimo o laudo de classificação.";
-      options.innerHTML = "";
-      break;
-    case 2:
-      dialog.innerHTML =
-        "Suporte: Muito bem, é super importante a conferência do processo e caso haja algo validar com o suporte";
-      options.innerHTML = "";
-      break;
-    case 3:
-      dialog.innerHTML =
-        "Suporte: Pessima escolha, você não deve seguir o processo sem o conferimento ou se for em caso de duvidas não mandar para o suporte.";
-      options.innerHTML = "";
-      break;
-    default:
-      dialog.innerHTML = "Personagem: Desculpe, não entendi.";
-      options.innerHTML = "";
+const dialogues = [
+  {
+    character: "NPC:",
+    message:
+      "Olá, tudo bem? hoje vou te ensinar um pouco do nosso processo interno da ADM, abordando os tópicos da Fase 1.",
+  },
+  { character: "Faturista:", message: "Que legal, estou pronto." },
+  { character: "Trocas NPC:", message: "Certo, então vamos lá." },
+  {
+    character: "Trocas NPC:",
+    message:
+      "Primeiro passo importante para o processo de conferimento é o análise dos documentos anexados",
+  },
+  { character: "Faturista", message: "" },
+  { character: "Faturista", message: "" },
+  { character: "Faturista", message: "" },
+  { character: "Faturista", message: "" },
+  { character: "Faturista", message: "" },
+  { character: "Faturista", message: "" },
+  { character: "Faturista", message: "" },
+  { character: "Faturista", message: "" },
+  { character: "Faturista", message: "" },
+  { character: "Faturista", message: "" },
+
+  // Adicione mais diálogos aqui
+];
+
+let currentDialogueIndex = 0;
+
+function displayNextDialogue() {
+  if (currentDialogueIndex < dialogues.length) {
+    const currentDialogue = dialogues[currentDialogueIndex];
+    characterNameElement.textContent = currentDialogue.character;
+    messageElement.textContent = currentDialogue.message;
+    currentDialogueIndex++;
+  } else {
+    dialogContainer.classList.add("hidden");
   }
 }
+
+dialogContainer.addEventListener("click", displayNextDialogue);
+
+// Função para mostrar a caixa de diálogo
+function showDialogue() {
+  currentDialogueIndex = 0;
+  dialogContainer.classList.remove("hidden");
+  displayNextDialogue();
+}
+
+// Mostrar a caixa de diálogo após um atraso (simulando um evento de jogo)
+setTimeout(showDialogue, 1000);

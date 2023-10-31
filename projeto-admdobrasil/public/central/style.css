@@ -133,7 +133,9 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-#footer-text {
+
+
+#meuFooter {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -141,30 +143,13 @@ body {
   color: #fff;
   text-align: center;
   padding: 10px;
+  display: block;
 }
-
-#dialog-box {
-  background-color: #333;
-  border: 2px solid #555;
-  border-radius: 10px;
-  width: 400px;
-  margin: 100px auto;
-  padding: 20px;
+.footerOculto {
+  display: none;
 }
-
-#dialog {
-  font-size: 12px;
-  margin: 0;
-  padding: 0;
-  color: #fff;
-}
-
 #options {
   margin-top: 20px;
-}
-#dialog-container {
-  justify-content: center;
-  align-items: flex-end;
 }
 #btn-responder {
   background-color: #444;
@@ -197,4 +182,81 @@ button:focus {
   text-transform: uppercase;
   transform: scale(1); /* Escala para dar uma aparência pixelizada */
   letter-spacing: 1px;
+}
+
+
+
+
+
+
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-right: 300px
+}
+
+.dialog-box {
+  background-color: #333;
+  border: 2px solid #666;
+  border-radius: 10px;
+  width: 700px; /* Aumentando a largura da caixa */
+  text-align: left;
+  display: flex;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  margin: 10px;
+  justify-content: center;
+}
+
+.character-image {
+  width: 100px;
+  height: 100px;
+  background-image: url("character.png");
+  background-size: cover;
+  border: 2px solid #666;
+
+  margin-right: 20px; /* Espaçamento à esquerda da imagem */
+}
+
+.dialog-content {
+  flex: 1;
+}
+
+.character-name {
+  font-weight: bold;
+  font-size: 1.5em; /* Tamanho maior para o nome do jogador */
+  margin: 10px;
+}
+
+.message {
+  font-size: 1em; /* Tamanho maior para a fala */
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+#next-button-dialog {
+  background-color: #00ff00;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#next-button-dialog:hover {
+  background-color: #00cc00;
+}
+
+.hidden {
+  display: none;
 }

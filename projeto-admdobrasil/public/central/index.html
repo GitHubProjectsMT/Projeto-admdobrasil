@@ -119,35 +119,22 @@
         </p>
       </div>
     </div>
-    <div id="dialog-container" style="display: none">
-      <div id="dialog-box">
-        <p id="dialog">
-          Classificador: olá, tudo bem? hoje eu irei te explicar um pouco do
-          processo de como nós classificadores anexamos a documentação para o
-          devido faturamento.
-        </p>
-        <div id="options">
-          <button id="btn-responder" onclick="responder(1)">Certo!</button>
-          <button
-            style="display: none"
-            id="btn-responder"
-            onclick="responder(2)"
-          >
-            Conferir o processo
-          </button>
-          <button
-            style="display: none"
-            id="btn-responder"
-            onclick="responder(3)"
-          >
-            Seguir sem conferir
-          </button>
+    
+    <div class="dialog-container" id="dialog-container" style="display: none;"> 
+      <div class="dialog-box">
+        <div class="character-image"></div>
+        <div class="dialog-content">
+          <div class="character-name"></div>
+          <div class="message"></div>
+          <div class="button-container-dialog">
+            <button id="next-button-dialog">Próximo</button>
+          </div>
         </div>
       </div>
     </div>
+    </div>
     <script src="script.js"></script>
   </body>
-  <div id="footer-text">
-    <footer>Carga Pro. &copy;</footer>
-  </div>
+
+  
 </html>

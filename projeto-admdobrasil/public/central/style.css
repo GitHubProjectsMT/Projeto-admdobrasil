@@ -1,5 +1,4 @@
 * {
-  font-family: "Press Start 2P", cursive;
   overflow: hidden;
 }
 
@@ -134,7 +133,6 @@ body {
   cursor: pointer;
 }
 
-
 #meuFooter {
   position: fixed;
   bottom: 0;
@@ -184,11 +182,6 @@ button:focus {
   letter-spacing: 1px;
 }
 
-
-
-
-
-
 .dialog-container {
   display: flex;
   flex-direction: column;
@@ -197,14 +190,14 @@ button:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  margin-right: 300px
+  margin-right: 300px;
 }
 
 .dialog-box {
   background-color: #333;
   border: 2px solid #666;
   border-radius: 10px;
-  width: 700px; /* Aumentando a largura da caixa */
+  width: 850px; /* Aumentando a largura da caixa */
   text-align: left;
   display: flex;
   padding: 20px;
@@ -231,11 +224,13 @@ button:focus {
 .character-name {
   font-weight: bold;
   font-size: 1.5em; /* Tamanho maior para o nome do jogador */
-  margin: 10px;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .message {
   font-size: 1em; /* Tamanho maior para a fala */
+  color: white;
 }
 
 .button-container {
@@ -245,12 +240,13 @@ button:focus {
 }
 
 #next-button-dialog {
-  background-color: #00ff00;
+  background-color: #2a922a;
   color: #000;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  margin-left: 620px;
 }
 
 #next-button-dialog:hover {

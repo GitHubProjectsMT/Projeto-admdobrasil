@@ -68,23 +68,23 @@ const messageElement = document.querySelector(".message");
 
 const dialogues = [
   {
-    character: "NPC:",
+    character: "Faturista:",
     message:
       "Olá, tudo bem? hoje vou te ensinar um pouco do nosso processo interno da ADM, abordando os tópicos da Fase 1.",
   },
-  { character: "Faturista:", message: "Que legal, estou pronto." },
-  { character: "Trocas NPC:", message: "Certo, então vamos lá." },
+  { character: "Você:", message: "Que legal, estou pronto." },
+  { character: "Faturista:", message: "Certo." },
   {
-    character: "Trocas NPC:",
+    character: "Faturista:",
     message:
       "Primeiro passo importante para o processo de conferimento é o análise dos documentos anexados",
   },
-  { character: "Faturista", message: "" },
-  { character: "Faturista", message: "" },
-  { character: "Faturista", message: "" },
-  { character: "Faturista", message: "" },
-  { character: "Faturista", message: "" },
-  { character: "Faturista", message: "" },
+  { character: "Faturista:", message: "Verificamos vários documentos importantes e obrigatorios se estão anexados." },
+  { character: "Faturista:", message: "Temos a Ordem de Carregamento." },
+  { character: "Faturista:", message: "A nota fiscal de venda do produtor." },
+  { character: "Faturista:", message: "O ticket de pesagem do caminhão." },
+  { character: "Faturista:", message: "E o Laudo de classificação." },
+  { character: "Você:", message: "" },
   { character: "Faturista", message: "" },
   { character: "Faturista", message: "" },
   { character: "Faturista", message: "" },
